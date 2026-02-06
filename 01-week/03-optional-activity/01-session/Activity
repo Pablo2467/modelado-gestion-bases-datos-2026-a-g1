@@ -1,0 +1,6 @@
+#Sesion 1 Modelado y gestion BD
+
+Una base de datos es un conjunto organizado de datos relacionados, almacenados de forma que minimizan la redundancia, 
+preservan la integridad y facilitan el acceso eficiente.
+Un Sistema Gestor de Bases de Datos (SGBD) es el software especializado que permite definir, construir, manipular y 
+administrar una base de datos (ej.: PostgreSQL, MySQL, SQL Server, MongoDB).
