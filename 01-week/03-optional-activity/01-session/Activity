@@ -1,6 +1,18 @@
 #Sesion 1 Modelado y gestion BD
 
-Una base de datos es un conjunto organizado de datos relacionados, almacenados de forma que minimizan la redundancia, 
-preservan la integridad y facilitan el acceso eficiente.
-Un Sistema Gestor de Bases de Datos (SGBD) es el software especializado que permite definir, construir, manipular y 
-administrar una base de datos (ej.: PostgreSQL, MySQL, SQL Server, MongoDB).
+¿Qué criterios usaría para decidir cuándo migrar de archivos planos a un SGBD?
+Para la migracion de archivos planos como excel o txt o json  se empezan hacia los archivos planos con los datos pequeños, 
+se migran a la SGBD cuando el volumen crece constantemente en base a los millones de registros.
+
+1. Cuándo la cantidad de registros es bastante ámplia. 
+R/. Cuando el volumen de datos crece mucho, es decir, cuando hay un rendimiento lento en los archivos del registro, alto consumo de 
+memoria , dificultad en mantenimiento. En lo cual, un ejemplo podria ser que una persona tiene 2 millones de registros en un CSV y buscar uno
+especifico para que el sistema revise linea por linea.
+
+2. Cuándo son muchas personas las que manipulan de los datos
+R/. Cuando hay colisiones de escritura , no hay control de transacciones en lo cual el archivo no deberia quedar dañado, no deberia 
+existir bloqueos. Es importante mantener un control de transaccion.
+3. Latencia de respuesta cuando se desea consultar cierta información
+R/. La latencia es el tiempo que tarda con el sistema en regresar una respuesta despues de hacer una consulta. Debemos tener en cuenta que
+cuando se trabaja la busqueda secuencial debe haber una complejidad aproximada. Por ejemplo, si hay 10 registros es casi instantaneo,
+si son 1'000.000 entonces la aplicacion de registros se vuelve lenta
