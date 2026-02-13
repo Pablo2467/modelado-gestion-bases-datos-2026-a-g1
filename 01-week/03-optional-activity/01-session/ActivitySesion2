@@ -1,0 +1,44 @@
+Workship SESSION 2 01 WEEK - Juan Pablo Valverde Barreiro
+
+¿Qué pasaría si no definimos correctamente las claves de cada entidad desde el inicio?
+R/. Se generaria una perdida de integridad, debido a que podria ocurrir una lista de duplicadas en los estudiantes con la misma informacion,
+malas notas asociados a los estudiantes, en lo cual, se crea una inconsistencia y falta de confiabilidad del sistema. Otro motivo tambien seria los problemas en relaciones
+ya que si la clave primaria no se encuentra bien definida, las relaciones del modelo ER se cortan, aparecen registros incoherentes.
+
+Por ejemplo: A un estudiante le aparece de esta manera:
+
+Nombre            Documento      Carrera
+Juan Pablo        123456        Ing. Sistemas
+Juan Pablo        96565         Ing. Industrial
+
+esto implica a que dos personas no se pueden llamarse igual o tener la misma informacion.
+
+En cambio si un gestor de bases de datos decide iniciar con esto:
+
+ID         Documento        Nombre          Carrera
+1          123456          Juan Pablo       Ing. Sistemas
+2          965565          Juan Pablo       Ing. Industrial
+
+Las relaciones de entidad y atributo ya serian mas seguras en la bases de datos, ademas que la clave ya seria unica para cada uno.
+
+En la siguiente vendria siendo la complejidad de mejorar el sistema, un mal diseño de entidad puede causar malas migraciones, perdida de datos, aumento del costo
+de un mantenimiento, entre otros... Por lo menos, para un proyecto real puede significar en volver a rehacer el modelo completo. Es importante saber que definir desde
+el principio puede comprometer la integridad del SGBD, constancia y escabilidad del sistema.
+
+¿Qué ventajas aporta tener identificadas las entidades antes de pasar al diagrama ER formal?
+
+R/. 
+1) Claridad del dominio del problema: Nos permite definir que objetos se deberia encontrar en un sistema, que necesitamos para que el almacenamiento sea permanente y no se
+eliminen los datos
+2) Evita confundir atributos con entidades: Debido a que muchos errores vienen de no diferenciar como Estudiante (Entidad) y nombre_estudiante (Atributo) Si manejamos estos
+conceptos desde un inicio podemos mejorar el modelo de la gestion de bases de datos en cualquier sistema, sin importar que tanto puede existir en una aplicacion de volumenes
+de datos.
+3) Permite detectar relaciones privadas: Nos ayuda a identificar las entidades asociativas como la matricula de un estudiante colegial o universitario
+4) Reduce la carga excesiva de trabajo: Puede disminuir los errores en la entidad y relacion, facilita con la optimizacion y mejora la coherencia de un modelo BD.
+
+¿Qué información adicional consideras crítica en un sistema académico que aún no hemos modelado?
+
+R/. Considero critico cuando no hay una estructura organizada, me explico: en una universidad hay una facultad, programa, departamento, plan de estudio, # de Pensum.
+Lo que ocurre es que se podria destabilizar ya que un programa puede cambiar su plan de estudio con el tiempo, algunas materias serian eliminadas y reemplazadas por 
+otras materias. Otra causa seria la gestion del estado academico del estudiante, no es suficiente solamente estar matriculado sino, demostrar que se encuentre activo (no
+retirado), asi mismo llevar un control de los creditos aprobados en cada materia con su respectiva nota.
